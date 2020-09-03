@@ -55,8 +55,16 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import { Icon } from 'buefy'
+
+Vue.use(Icon)
+
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  components: {
+    'b-icon': Icon
+  }
 }
 </script>
 

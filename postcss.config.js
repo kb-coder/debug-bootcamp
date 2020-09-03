@@ -1,3 +1,4 @@
+require('postcss-font-magician')
 const postCssImport = require('postcss-import')
 const autoPrefixer = require('autoprefixer')
 const purgecss = require('@fullhuman/postcss-purgecss')({
@@ -12,9 +13,21 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
   defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || []
 })
 
+const postcssFontMagician = require('postcss-font-magician')({
+  variants: {
+    'Roboto Condensed': {
+      300: [],
+      400: [],
+      700: []
+    }
+  },
+  foundries: ['google']
+})
+
 module.exports = {
   plugins: [
     postCssImport,
+    postcssFontMagician,
     autoPrefixer,
     ...process.env.NODE_ENV === 'production'
       ? [purgecss]

@@ -1,81 +1,84 @@
 <template>
-  <!--<section class="hero app-navbar is-bold">
-    <div class="hero-head">-->
-      <header class="navbar is-bold">
-        <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item">
-            <i class="fa fa-cog fa-spin fa-2x fa-fw"></i> Logo
-            <!-- ref: http://fontawesome.io/examples/#animated -->
+  <header class="navbar is-bold">
+    <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <i class="fa fa-cog fa-spin fa-2x fa-fw"></i> Logo
+        <!-- ref: http://fontawesome.io/examples/#animated -->
+      </a>
+      <a class="navbar-item is-hidden-desktop" href="https://github.com/ndro/vue-webpack-buefy" target="_blank">
+        <b-icon pack="fas" icon="github" type="is-black"></b-icon>
+      </a>
+      <div class="navbar-burger burger" data-target="navbarDropdown">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navbarDropdown" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="#">
+          <router-link :to="{ name: 'Home' }">Home</router-link>
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">
+            Menu Hover
           </a>
-          <a class="navbar-item is-hidden-desktop" href="https://github.com/ndro/vue-webpack-buefy" target="_blank">
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="#">
+              Item 1
+            </a>
+            <a class="navbar-item" href="#">
+              Item 2
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="#">
+              Item after divider
+            </a>
+            <a class="navbar-item is-active" href="#">
+              Item is-active
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <!--<div class="navbar-item">-->
+          <a class="navbar-item" href="https://github.com/ndro/vue-webpack-buefy" target="_blank">
             <b-icon pack="fas" icon="github" type="is-black"></b-icon>
           </a>
-          <div class="navbar-burger burger" data-target="navbarDropdown">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-
-        <div id="navbarDropdown" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item" href="#">
-              <router-link :to="{ name: 'Home' }">Home</router-link>
-            </a>
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link" href="#">
-                Menu Hover
+        <!--</div>-->
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="button is-primary is-outlined" href="#">
+                <span>Button</span>
               </a>
-              <div class="navbar-dropdown is-boxed">
-                <a class="navbar-item" href="#">
-                  Item 1
-                </a>
-                <a class="navbar-item" href="#">
-                  Item 2
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item" href="#">
-                  Item after divider
-                </a>
-                <a class="navbar-item is-active" href="#">
-                  Item is-active
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="navbar-end">
-            <!--<div class="navbar-item">-->
-              <a class="navbar-item" href="https://github.com/ndro/vue-webpack-buefy" target="_blank">
-                <b-icon pack="fas" icon="github" type="is-black"></b-icon>
+            </p>
+            <p class="control">
+              <a class="button is-primary" href="#">
+                <b-icon pack="fas" icon="user"></b-icon>
+                <span>With Icon</span>
               </a>
-            <!--</div>-->
-            <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
-                  <a class="button is-primary is-outlined" href="#">
-                    <span>Button</span>
-                  </a>
-                </p>
-                <p class="control">
-                  <a class="button is-primary" href="#">
-                    <b-icon pack="fas" icon="user"></b-icon>
-                    <span>With Icon</span>
-                  </a>
-                </p>
-              </div>
-            </div>
+            </p>
           </div>
         </div>
-        </div>
-      </header>
-    <!--</div>
-  </section>-->
+      </div>
+    </div>
+    </div>
+  </header>
 </template>
 
 <script>
+import Vue from 'vue'
+import { Icon } from 'buefy'
+Vue.use(Icon)
+
 export default {
+  components: {
+    'b-icon': Icon
+  }
 }
 // /* burger navigation */
 // document.addEventListener('DOMContentLoaded', function () {
