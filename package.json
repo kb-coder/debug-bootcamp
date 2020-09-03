@@ -1,0 +1,55 @@
+{
+  "name": "debug-bootcamp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "analyze": "vue-cli-service build --report",
+    "serve": "vue-cli-service serve --open --modern --port 9000",
+    "build": "vue-cli-service build --modern --mode production",
+    "lint": "vue-cli-service lint",
+    "dev-build": "vue-cli-service build --mode development",
+    "dev": "npm run lint & npm run dev-build && npm run serve",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/vue-fontawesome": "^2.0.0",
+    "buefy": "^0.9.3",
+    "core-js": "^3.6.5",
+    "vue": "~2.6.11",
+    "vue-router": "~3.2.0",
+    "vuex": "~3.4.0"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-e2e-cypress": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "@vue/test-utils": "^1.0.3",
+    "autoprefixer": "^9.8.6",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "postcss-import": "^12.0.1",
+    "purgecss": "^2.3.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "sass-resources-loader": "^2.1.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "sideEffects": [
+    "*.vue",
+    "*.scss"
+  ]
+}

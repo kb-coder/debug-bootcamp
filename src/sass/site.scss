@@ -1,0 +1,16 @@
+// Import Non-Bulma stuff
+// @import url("https://fonts.googleapis.com/css?family=Roboto");
+// $family-sans-serif: "Roboto", sans-serif;
+
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Set your colors etc..
+$primary: #8c67ef;
+$primary-invert: findColorInvert($primary);
+$twitter: #4099FF;
+$twitter-invert: findColorInvert($twitter);
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
