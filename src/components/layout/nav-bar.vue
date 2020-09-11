@@ -2,13 +2,10 @@
   <header class="navbar is-bold">
     <div class="container">
     <div class="navbar-brand">
-      <a class="navbar-item">
-        <i class="fa fa-cog fa-spin fa-2x fa-fw"></i> Logo
-        <!-- ref: http://fontawesome.io/examples/#animated -->
-      </a>
-      <a class="navbar-item is-hidden-desktop" href="https://github.com/ndro/vue-webpack-buefy" target="_blank">
-        <b-icon pack="fas" icon="github" type="is-black"></b-icon>
-      </a>
+      <router-link class="navbar-item" :to="{ name: 'Home' }">
+        <img alt="Vue logo" src="../../assets/logo.png">
+      </router-link>
+      <a class="navbar-item is-hidden-desktop" href="#" target="_blank" />
       <div class="navbar-burger burger" data-target="navbarDropdown">
         <span></span>
         <span></span>
@@ -23,11 +20,11 @@
         </a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">
-            Menu Hover
+            Other Pages
           </a>
           <div class="navbar-dropdown is-boxed">
             <a class="navbar-item" href="#">
-              Item 1
+              <router-link :to="{ name: 'About' }">About</router-link>
             </a>
             <a class="navbar-item" href="#">
               Item 2
@@ -44,22 +41,11 @@
       </div>
 
       <div class="navbar-end">
-        <!--<div class="navbar-item">-->
-          <a class="navbar-item" href="https://github.com/ndro/vue-webpack-buefy" target="_blank">
-            <b-icon pack="fas" icon="github" type="is-black"></b-icon>
-          </a>
-        <!--</div>-->
         <div class="navbar-item">
           <div class="field is-grouped">
             <p class="control">
-              <a class="button is-primary is-outlined" href="#">
-                <span>Button</span>
-              </a>
-            </p>
-            <p class="control">
-              <a class="button is-primary" href="#">
-                <b-icon pack="fas" icon="user"></b-icon>
-                <span>With Icon</span>
+              <a class="button is-primary is-outlined" href="http://www.google.com" target="_blank">
+                <span>Google Me</span>
               </a>
             </p>
           </div>
@@ -71,16 +57,11 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import { Icon } from 'buefy'
-Vue.use(Icon)
-
 export default {
-  components: {
-    'b-icon': Icon
-  }
+  name: 'Navigation'
 }
-// /* burger navigation */
+
+// /* burger navigation */ USE VUE!!!
 // document.addEventListener('DOMContentLoaded', function () {
 //   // Get all "navbar-burger" elements
 //   var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0)

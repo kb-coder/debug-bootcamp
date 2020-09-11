@@ -2,8 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { ConfigProgrammatic } from 'buefy'
+import Buefy from 'buefy'
 import { library } from '@fortawesome/fontawesome-svg-core'
+import 'buefy/dist/buefy.css'
 
 // internal icons
 import {
@@ -17,12 +18,14 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(faCheck, faCheckCircle, faInfoCircle, faExclamationTriangle, faExclamationCircle,
   faArrowUp, faAngleRight, faAngleLeft, faAngleDown,
   faEye, faEyeSlash, faCaretDown, faCaretUp, faUpload)
-Vue.component('vue-fontawesome', FontAwesomeIcon)
 
-ConfigProgrammatic.setOptions({
-  defaultIconComponent: 'vue-fontawesome',
-  defaultIconPack: 'fas'
-})
+Vue.component('vue-fontawesome', FontAwesomeIcon)
+Vue.use(Buefy) // Not a fan of importing entire library. Investigate for tree shaking option
+
+// ConfigProgrammatic.setOptions({
+//   defaultIconComponent: 'vue-fontawesome',
+//   defaultIconPack: 'fas'
+// })
 
 Vue.config.productionTip = false
 if (process.env.VUE_APP_DEBUG === 'true') {

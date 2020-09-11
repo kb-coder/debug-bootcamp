@@ -1,22 +1,31 @@
 <template>
   <div id="app">
     <nav-bar />
-    <main-content></main-content>
-    <info-bar></info-bar>
+    <router-view name="hero">
+      <!--hero -->
+    </router-view>
+    <section class="main-content">
+      <transition
+        mode="out-in"
+        enter-active-class="fadeIn"
+        leave-active-class="fadeOut"
+        appear>
+        <router-view class="animated" name="content">
+          <!--content -->
+        </router-view>
+      </transition>
+    </section>
     <footer-bar></footer-bar>
-    <router-view/>
   </div>
 </template>
 
 <script>
-import { NavBar, MainContent, InfoBar, FooterBar } from '@/components/layout'
+import { NavBar, FooterBar } from '@/components/layout'
 
 export default {
   name: 'App',
   components: {
     FooterBar,
-    InfoBar,
-    MainContent,
     NavBar
   }
 }
