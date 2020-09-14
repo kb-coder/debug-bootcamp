@@ -1,10 +1,7 @@
 <template>
   <div id="app">
     <nav-bar />
-    <router-view name="hero">
-      <!--hero -->
-    </router-view>
-    <section class="main-content">
+    <main class="main-content">
       <transition
         mode="out-in"
         enter-active-class="fadeIn"
@@ -14,22 +11,32 @@
           <!--content -->
         </router-view>
       </transition>
-    </section>
-    <footer-bar></footer-bar>
+    </main>
+    <router-view name="footer">
+      <!--footer -->
+    </router-view>
   </div>
 </template>
 
 <script>
-import { NavBar, FooterBar } from '@/components/layout'
+import { NavBar } from '@/components/layout'
 
 export default {
   name: 'App',
   components: {
-    FooterBar,
     NavBar
   }
 }
 </script>
 
 <style lang="scss">
+// attempt to fix footer to be sticky. Needs work.
+.main-content {
+  flex: 1;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 </style>

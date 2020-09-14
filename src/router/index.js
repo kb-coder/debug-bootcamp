@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
-import { InfoBar } from '@/components/layout'
+import { FooterBar } from '@/components/layout'
 const About = () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
 
 Vue.use(VueRouter)
@@ -12,7 +12,7 @@ const routes = [
     name: 'Home',
     components: {
       content: Home,
-      hero: InfoBar
+      footer: FooterBar
     }
   },
   {

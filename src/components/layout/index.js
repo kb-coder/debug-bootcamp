@@ -1,9 +1,9 @@
 import FooterBar from './footer-bar'
-import InfoBar from './info-bar'
+import HeroBar from './hero-bar'
 import NavBar from './nav-bar'
 
 export {
   FooterBar,
-  InfoBar,
+  HeroBar,
   NavBar
 }
