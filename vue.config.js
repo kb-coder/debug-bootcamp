@@ -9,7 +9,7 @@ module.exports = {
   lintOnSave: true,
   chainWebpack: (config) => {
     if (process.env.NODE_ENV === 'development') {
-      config.devtool('eval-source-map')
+      config.devtool('source-map')
     } else if (process.env.NODE_ENV === 'test') {
       config.devtool('cheap-module-eval-source-map')
     }
