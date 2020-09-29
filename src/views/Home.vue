@@ -11,6 +11,7 @@
         />
       </label>
       <p>Hello my name is <span class="has-text-info-dark">{{ firstName }}</span>!</p>
+      <button @click="saveToState">Save</button>
     </div>
   </div>
 </template>
@@ -24,8 +25,17 @@ export default {
   },
   data () {
     return {
-      firstName: 'Karen',
-      name: 'Karen'
+      firstName: ''
+    }
+  },
+  created () {
+    this.firstName = this.$store.state.person.firstName
+  },
+  methods: {
+    saveToState () {
+      const person = this.$store.state.person
+      person.firstName = this.firstName
+      this.$store.dispatch('person/updatePerson', person)
     }
   }
 }
